@@ -1,0 +1,141 @@
+/* ==========================================================
+   Design tokens — ArchRoach Hub Folder UI Design System v1.0
+   冷灰工作台 + 低饱和粉彩分类 + 蟑螂棕品牌色（约 7% 用量）
+   ========================================================== */
+:root {
+  /* ---------- Neutral ---------- */
+  --n-0:   #FFFFFF;
+  --n-25:  #FCFCFD;
+  --n-50:  #F8F8FA;
+  --n-75:  #F4F4F7;
+  --n-100: #EEEEF2;
+  --n-200: #E2E3E8;
+  --n-300: #CFD1D8;
+  --n-400: #A6A8B2;
+  --n-500: #777A85;
+  --n-600: #5B5E68;
+  --n-700: #3B3D45;
+  --n-800: #23242A;
+  --n-900: #111217;
+
+  /* ---------- Brand (roach) ---------- */
+  --roach-50:  #FFF7F1;
+  --roach-100: #FBE9DC;
+  --roach-200: #F3CFB5;
+  --roach-300: #E7AD83;
+  --roach-400: #D4864E;
+  --roach-500: #B9632E;
+  --roach-600: #93451F;
+  --roach-700: #713318;
+  --roach-800: #4D2413;
+  --roach-900: #2E170D;
+
+  /* ---------- Pastel（内容分类） ---------- */
+  --p-lavender: #EEEAFB;  --p-lavender-s: #DFD8F5;
+  --p-blue:     #E8F3FB;  --p-blue-s:     #D6EAF7;
+  --p-peach:    #FBEBDD;  --p-peach-s:    #F5DCC8;
+  --p-mint:     #EAF5EE;  --p-mint-s:     #D6EBDD;
+  --p-rose:     #F8EAF0;  --p-rose-s:     #EFD5E1;
+  --p-gray:     #EFF0F3;
+
+  /* ---------- Semantic ---------- */
+  --ok:     #2E8B57;
+  --warn:   #C47A16;
+  --danger: #D14343;
+  --info:   #3F6FB6;
+
+  /* ---------- Surface ---------- */
+  --s-canvas:   #F1F1F4;
+  --s-app:      #FFFFFF;
+  --s-sidebar:  #FCFCFD;
+  --s-raised:   #FFFFFF;
+  --s-soft:     #F8F8FA;
+  --s-selected: #F2EFFA;
+  --s-overlay:  rgba(17, 18, 23, 0.38);
+
+  /* ---------- Text ---------- */
+  --t-primary:   #17181D;
+  --t-secondary: #646771;
+  --t-tertiary:  #9699A3;
+  --t-inverse:   #FFFFFF;
+  --t-brand:     #713318;
+
+  /* ---------- Border ---------- */
+  --b-subtle: #ECECF0;
+  --b-default: #E2E3E8;
+  --b-strong: #C9CBD3;
+  --b-focus:  #B9632E;
+
+  /* ---------- Typography ---------- */
+  --f-sans: "Inter", "SF Pro Text", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  --f-display: "Inter", "SF Pro Display", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", "SFMono-Regular", "JetBrains Mono", monospace;
+
+  --fs-display: clamp(2rem, 1.5rem + 1.6vw, 3rem);
+  --fs-h1: clamp(1.625rem, 1.35rem + 1vw, 2.25rem);
+  --fs-h2: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+  --fs-h3: 1.375rem;
+  --fs-h4: 1.125rem;
+  --fs-lg: 1rem;
+  --fs-md: 0.875rem;
+  --fs-sm: 0.75rem;
+  --fs-xs: 0.6875rem;
+
+  --lh-display: 1.08;
+  --lh-heading: 1.2;
+  --lh-body: 1.55;
+  --lh-compact: 1.35;
+
+  --ls-tight: -0.025em;
+
+  /* ---------- Spacing ---------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px;
+
+  /* ---------- Layout ---------- */
+  --shell-max: 1600px;
+  --shell-gap: 24px;
+  --sidebar-w: 240px;
+  --topbar-h: 72px;
+  --pad-x: 32px;
+  --pad-y: 28px;
+  --section-gap: 36px;
+  --grid-gap: 20px;
+
+  /* ---------- Radius ---------- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+  --r-app: 30px;
+  --r-tab: 18px;
+
+  /* ---------- Shadow ---------- */
+  --sh-xs: 0 1px 2px rgba(17, 18, 23, 0.04);
+  --sh-sm: 0 4px 12px rgba(17, 18, 23, 0.055);
+  --sh-md: 0 10px 28px rgba(17, 18, 23, 0.075);
+  --sh-lg: 0 22px 56px rgba(17, 18, 23, 0.10);
+  --sh-offset: 5px 7px 0 rgba(17, 18, 23, 0.035);
+  --sh-offset-brand: 5px 7px 0 rgba(185, 99, 46, 0.10);
+  --sh-float: 0 16px 40px rgba(17, 18, 23, 0.12);
+
+  /* ---------- Motion ---------- */
+  --d-fast: 140ms;
+  --d-normal: 220ms;
+  --d-slow: 360ms;
+  --e-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --e-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ---------- Mascot ---------- */
+  --m-line:  #2E170D;
+  --m-body:  #B9632E;
+  --m-shell: #D4864E;
+  --m-light: #F3CFB5;
+}
+
+@media (max-width: 1100px) {
+  :root { --shell-gap: 0px; --pad-x: 20px; --pad-y: 20px; --section-gap: 28px; }
+}
