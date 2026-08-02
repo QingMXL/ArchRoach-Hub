@@ -8,6 +8,13 @@
 
   var DICT = {
     zh: {
+      'oh.aria': 'ArchRoach Hub 开场',
+      'oh.lede': '建筑人熬大夜、反复改方案，耐造、适应力极强，像蟑螂一样在哪都能扎根活下去。',
+      'oh.enter': '点击进入',
+      'oh.skip': '跳过',
+      'oh.hintKey': '移动蟑螂',
+      'oh.hintTap': '点击任意位置，它会爬过去',
+
       'a11y.skip': '跳到主要内容',
 
       'nav.home': '首页', 'nav.directions': '转行方向', 'nav.cases': '真实案例',
@@ -140,6 +147,13 @@
     },
 
     en: {
+      'oh.aria': 'ArchRoach Hub intro',
+      'oh.lede': 'Architecture people pull all-nighters and redo the scheme ten times. Hard to kill, absurdly adaptable — we take root anywhere.',
+      'oh.enter': 'Enter',
+      'oh.skip': 'Skip',
+      'oh.hintKey': 'to move the roach',
+      'oh.hintTap': 'or click anywhere and it will crawl over',
+
       'a11y.skip': 'Skip to main content',
 
       'nav.home': 'Home', 'nav.directions': 'Career Paths', 'nav.cases': 'Real Stories',

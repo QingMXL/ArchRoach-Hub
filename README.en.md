@@ -36,6 +36,21 @@ Hit `中 / EN` in the top bar to switch languages — every UI string and conten
 
 ---
 
+## Opening screen
+
+Your first visit opens with an intro: two dot-matrix hands on either side, the site name in the middle, and a roach crawling between them.
+
+- **Arrow keys** (or WASD) move the roach; it turns to face the direction of travel
+- **Click anywhere** and it crawls there — fast when far, easing in as it arrives
+- Hit Enter / the button / Esc and the intro fades into the homepage
+- Shown once per browser session; add `?intro=1` to replay it
+
+![Opening](screenshots/00-opening.png)
+
+The hands are not an image: a handful of rotated ellipses form the silhouette, which is then sampled on a grid into dots that thin out toward the fingertips. Crisp at any size, no extra assets.
+
+---
+
 ## Screenshots
 
 > Captured from the running app with headless Chrome (`screenshots/`). The UI is Chinese by default.

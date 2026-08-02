@@ -191,4 +191,7 @@
   });
   Lang.applyStatic();
   render();
+
+  /* 开场页：每会话首次访问覆盖在首页之上，淡出后自毁（?intro=1 可强制重看） */
+  if (window.Opening) Opening.maybeShow();
 })();
