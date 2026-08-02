@@ -1,0 +1,6 @@
+# 部署产物只需要 index.html + assets，其余是仓库文档
+docs/
+screenshots/
+README.md
+README.en.md
+.claude/
