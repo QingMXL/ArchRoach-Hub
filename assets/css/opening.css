@@ -42,6 +42,7 @@
   justify-items: center;
   gap: 6px;
   padding: 0 32px;
+  margin-bottom: 20vh;          /* 上移，把画面中部留给两条手臂 */
   text-align: center;
   cursor: default;
 }
@@ -204,6 +205,21 @@
   50%      { transform: rotate(3.5deg) translateY(-0.6px); }
 }
 
+/* 跟班蟑螂：比领头的小一圈、淡一点，爬行节奏各不相同 */
+.oh__flock { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.oh__bug {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--bug, 22px);
+  height: var(--bug, 22px);
+  margin-top: calc(var(--bug, 22px) / -2);
+  margin-left: calc(var(--bug, 22px) / -2);
+  will-change: transform;
+}
+.oh__bug-inner { display: block; width: 100%; height: 100%; }
+.oh__bug[data-moving] .oh__bug-inner { animation: oh-crawl var(--crawl, 300ms) linear infinite; }
+
 /* 蟑螂脚下的一点点阴影，帮助它「贴」在画面上 */
 .oh__shadow {
   position: absolute;
@@ -226,11 +242,13 @@
   .oh__hint { bottom: 22px; font-size: 11px; }
   .oh__hint .oh__hint-kbd { display: none; }   /* 触屏没有方向键 */
   .oh__roach { width: 38px; height: 38px; margin: -19px 0 0 -19px; }
+  .oh__panel { margin-bottom: 26vh; }
 }
 
 /* ---------------- 动效降级 ---------------- */
 @media (prefers-reduced-motion: reduce) {
   .oh, .oh__eyebrow, .oh__title, .oh__lede, .oh__enter, .oh__hint { animation: none; opacity: 1; }
   .oh[data-leaving] { animation: none; opacity: 0; transition: opacity 160ms linear; }
-  .oh__roach[data-moving] .oh__roach-inner { animation: none; }
+  .oh__roach[data-moving] .oh__roach-inner,
+  .oh__bug[data-moving] .oh__bug-inner { animation: none; }
 }

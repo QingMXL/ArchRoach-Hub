@@ -138,7 +138,8 @@
       });
     },
 
-    title: function () { return T('res.title'); }
+    title: function () { return T('res.title'); },
+    desc: function () { return T('res.lede'); }
   };
 
   /* ---------------- 路线图 ---------------- */
@@ -186,6 +187,7 @@
             }).join('') + '</div></section>' +
         '</aside></div>';
     },
-    title: function () { return T('road.title'); }
+    title: function () { return T('road.title'); },
+    desc: function () { return T('road.lede'); }
   };
 })();

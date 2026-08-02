@@ -49,6 +49,12 @@
 
   /* ---------------- 渲染 ---------------- */
   var lastPath = null;
+  var BASE_DESC = (document.querySelector('meta[name="description"]') || {}).content || '';
+
+  function setMeta(name, content) {
+    var el = document.querySelector('meta[name="' + name + '"]');
+    if (el) el.setAttribute('content', content);
+  }
 
   function setActiveNav(href) {
     document.querySelectorAll('.nav-item').forEach(function (a) {
@@ -78,6 +84,7 @@
     if (page.mount) page.mount(view, params);
 
     document.title = (page.title ? page.title(params) + ' · ' : '') + 'ArchRoach Hub 建筑蟑螂互助会';
+    setMeta('description', page.desc ? page.desc(params) : BASE_DESC);
 
     var navHref = hit ? hit.def.nav : null;
     if (hit && hit.def.page === 'me') navHref = '#/me/' + (params.tab || 'bookings');

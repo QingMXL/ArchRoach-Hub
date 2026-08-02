@@ -130,7 +130,8 @@
       });
     },
 
-    title: function () { return T('dir.title'); }
+    title: function () { return T('dir.title'); },
+    desc: function () { return T('dir.lede'); }
   };
 
   /* ---------------- 详情 ---------------- */
@@ -305,6 +306,10 @@
     title: function (params) {
       var d = U.byId(DATA_DIRECTIONS, params.id);
       return d ? L(d.name) : T('c.notFound');
+    },
+    desc: function (params) {
+      var d = U.byId(DATA_DIRECTIONS, params.id);
+      return d ? L(d.name) + '：' + L(d.desc) + ' ' + L(d.lede) : '';
     }
   };
 })();

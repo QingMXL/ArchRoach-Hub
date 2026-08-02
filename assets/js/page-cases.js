@@ -129,7 +129,8 @@
       });
     },
 
-    title: function () { return T('case.title'); }
+    title: function () { return T('case.title'); },
+    desc: function () { return T('case.lede'); }
   };
 
   /* ---------------- 详情 ---------------- */
@@ -236,6 +237,10 @@
     title: function (params) {
       var c = U.byId(DATA_CASES, params.id);
       return c ? L(c.title) : T('c.notFound');
+    },
+    desc: function (params) {
+      var c = U.byId(DATA_CASES, params.id);
+      return c ? L(c.excerpt) : '';
     }
   };
 })();

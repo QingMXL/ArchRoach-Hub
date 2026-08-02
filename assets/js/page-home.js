@@ -117,6 +117,7 @@
       });
     },
 
-    title: function () { return T('nav.home'); }
+    title: function () { return T('nav.home'); },
+    desc: function () { return T('home.title') + ' —— ' + T('home.lede'); }
   };
 })();

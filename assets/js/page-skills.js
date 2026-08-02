@@ -105,6 +105,7 @@
       });
     },
 
-    title: function () { return T('skill.title'); }
+    title: function () { return T('skill.title'); },
+    desc: function () { return T('skill.lede'); }
   };
 })();

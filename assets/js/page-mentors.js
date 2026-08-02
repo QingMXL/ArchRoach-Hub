@@ -121,7 +121,8 @@
       });
     },
 
-    title: function () { return T('mentor.title'); }
+    title: function () { return T('mentor.title'); },
+    desc: function () { return T('mentor.lede'); }
   };
 
   /* ---------------- 前辈详情 ---------------- */

@@ -327,6 +327,31 @@
 }
 .side-stack { display: grid; gap: var(--sp-4); position: sticky; top: calc(var(--shell-gap) + var(--topbar-h) + 16px); }
 
+/* ---------------- 矮视口：把侧栏压缩到一屏内 ----------------
+   笔记本视口常见 620–760px，默认高度的侧栏内容约 970px 会被截断。
+   按视口高度逐级瘦身：先收紧间距 → 再去掉帮助卡 → 最后去掉页脚小字。 */
+@media (max-height: 900px) {
+  :root { --topbar-h: 64px; }
+  .sidebar { gap: 14px; padding-block: 18px 14px; }
+  .nav-item { height: 36px; }
+  .sidebar__help { padding: 12px; }
+  .sidebar__help svg { width: 42px; height: 42px; }
+  .sidebar__help p { margin-bottom: 8px; }
+}
+
+@media (max-height: 780px) {
+  .sidebar { gap: 10px; }
+  .nav-item { height: 34px; }
+  .nav-group__label { padding-block: 2px; }
+  .sidebar__help { display: none; }
+}
+
+@media (max-height: 660px) {
+  .nav-item { height: 31px; font-size: var(--fs-sm); }
+  .brand__cn { display: none; }
+  .sidebar__legal { display: none; }
+}
+
 /* ---------------- 响应式 ---------------- */
 @media (max-width: 1280px) {
   .with-side { grid-template-columns: minmax(0, 1fr); }
