@@ -87,7 +87,12 @@
     setMeta('description', page.desc ? page.desc(params) : BASE_DESC);
 
     var navHref = hit ? hit.def.nav : null;
-    if (hit && hit.def.page === 'me') navHref = '#/me/' + (params.tab || 'bookings');
+    if (hit && hit.def.page === 'me') {
+      /* 我的文件 / 收藏夹已并入「我的资料」，高亮统一落在资料上 */
+      var tab = params.tab || 'bookings';
+      var owner = (tab === 'files' || tab === 'favorites') ? 'profile' : tab;
+      navHref = '#/me/' + owner;
+    }
     setActiveNav(navHref);
 
     if (!opts || !opts.keepScroll) {

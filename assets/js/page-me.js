@@ -102,7 +102,7 @@
     });
     if (!items.length) {
       return U.empty('roach-folder', T('me.noFav'), T('me.noFavD'),
-        '<a class="btn btn--primary btn--sm" style="margin-top:8px" href="#/directions">' + U.esc(T('cta-explore') || T('dir.title')) + '</a>');
+        '<a class="btn btn--primary btn--sm" style="margin-top:8px" href="#/directions">' + U.esc(T('dir.title')) + '</a>');
     }
     return '<div class="card" style="padding:10px 8px"><div class="rows">' + items.map(function (it) {
       return '<a class="row-item" style="grid-template-columns:38px minmax(0,1fr) 92px 24px" href="' + it.href + '">' +

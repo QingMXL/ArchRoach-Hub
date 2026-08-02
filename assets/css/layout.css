@@ -334,16 +334,16 @@
 .side-stack { display: grid; gap: var(--sp-4); position: sticky; top: calc(var(--shell-gap) + var(--topbar-h) + 16px); }
 
 /* ---------------- 矮视口 ----------------
-   笔记本视口常见 600–780px，默认侧栏内容约 970px。
+   笔记本视口常见 600–780px，11 项导航的默认侧栏内容约 880px。
    原则：只压尺寸，不删内容 —— 导航、帮助卡、品牌中文名、页脚一个都不少，
    实在放不下就让侧栏自己滚动（它本来就 overflow-y:auto）。 */
-@media (max-height: 1040px) {
+@media (max-height: 940px) {
   :root { --topbar-h: 64px; }
   .sidebar { gap: 14px; padding-block: 18px 14px; }
   .nav-item { height: 36px; }
 }
 
-@media (max-height: 820px) {
+@media (max-height: 860px) {
   .sidebar { gap: 10px; padding-block: 14px 12px; }
   .nav-group { gap: 1px; }
   .nav-item { height: 33px; }
@@ -367,7 +367,7 @@
   .sidebar__help { padding: 10px; }
 }
 
-@media (max-height: 680px) {
+@media (max-height: 700px) {
   .nav-item { height: 32px; }
   .sidebar { gap: 10px; padding-block: 14px 12px; }
   .sidebar__legal { padding-top: 6px; }
