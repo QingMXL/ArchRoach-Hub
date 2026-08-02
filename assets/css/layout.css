@@ -30,6 +30,12 @@
   background: var(--s-sidebar);
   border-right: 1px solid var(--b-subtle);
   overflow-y: auto;
+  overscroll-behavior: contain;
+}
+/* 下面还有内容时，底部淡出一小段作为「可滚动」的提示 */
+.sidebar[data-more] {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
 }
 
 .brand {
@@ -327,29 +333,44 @@
 }
 .side-stack { display: grid; gap: var(--sp-4); position: sticky; top: calc(var(--shell-gap) + var(--topbar-h) + 16px); }
 
-/* ---------------- 矮视口：把侧栏压缩到一屏内 ----------------
-   笔记本视口常见 620–760px，默认高度的侧栏内容约 970px 会被截断。
-   按视口高度逐级瘦身：先收紧间距 → 再去掉帮助卡 → 最后去掉页脚小字。 */
-@media (max-height: 900px) {
+/* ---------------- 矮视口 ----------------
+   笔记本视口常见 600–780px，默认侧栏内容约 970px。
+   原则：只压尺寸，不删内容 —— 导航、帮助卡、品牌中文名、页脚一个都不少，
+   实在放不下就让侧栏自己滚动（它本来就 overflow-y:auto）。 */
+@media (max-height: 1040px) {
   :root { --topbar-h: 64px; }
   .sidebar { gap: 14px; padding-block: 18px 14px; }
   .nav-item { height: 36px; }
-  .sidebar__help { padding: 12px; }
-  .sidebar__help svg { width: 42px; height: 42px; }
-  .sidebar__help p { margin-bottom: 8px; }
 }
 
-@media (max-height: 780px) {
-  .sidebar { gap: 10px; }
-  .nav-item { height: 34px; }
-  .nav-group__label { padding-block: 2px; }
-  .sidebar__help { display: none; }
+@media (max-height: 820px) {
+  .sidebar { gap: 10px; padding-block: 14px 12px; }
+  .nav-group { gap: 1px; }
+  .nav-item { height: 33px; }
+  .nav-group__label { padding-block: 2px 2px; }
+  .sidebar__legal { padding-top: 6px; }
+
+  /* 帮助卡改成横向紧凑排布：蟑螂在左，文案在右，按钮占满下一行。
+     内容一个不少，高度从约 180px 降到约 104px。 */
+  .sidebar__help {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 2px 10px;
+    align-items: center;
+    padding: 12px;
+    text-align: start;
+  }
+  .sidebar__help svg { grid-row: span 2; width: 36px; height: 36px; margin: 0; }
+  .sidebar__help h3 { align-self: end; margin: 0; font-size: var(--fs-sm); }
+  .sidebar__help p { align-self: start; margin: 0; font-size: var(--fs-xs); }
+  .sidebar__help .btn { grid-column: 1 / -1; margin-top: 8px; }
+  .sidebar__help { padding: 10px; }
 }
 
-@media (max-height: 660px) {
-  .nav-item { height: 31px; font-size: var(--fs-sm); }
-  .brand__cn { display: none; }
-  .sidebar__legal { display: none; }
+@media (max-height: 680px) {
+  .nav-item { height: 32px; }
+  .sidebar { gap: 10px; padding-block: 14px 12px; }
+  .sidebar__legal { padding-top: 6px; }
 }
 
 /* ---------------- 响应式 ---------------- */

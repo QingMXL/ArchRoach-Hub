@@ -113,6 +113,15 @@
   });
   scrim.addEventListener('click', closeDrawer);
 
+  /* 矮视口下侧栏可能装不下：底部渐隐提示「下面还有」，滚到底就取消 */
+  function syncSidebarFade() {
+    var more = sidebar.scrollHeight - sidebar.clientHeight - sidebar.scrollTop > 2;
+    if (more) sidebar.setAttribute('data-more', ''); else sidebar.removeAttribute('data-more');
+  }
+  sidebar.addEventListener('scroll', syncSidebarFade, { passive: true });
+  window.addEventListener('resize', syncSidebarFade, { passive: true });
+  syncSidebarFade();
+
   /* ---------------- 全局搜索 ---------------- */
   function searchAll(q) {
     var key = q.trim().toLowerCase();
